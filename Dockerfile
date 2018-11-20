@@ -11,3 +11,5 @@ HEALTHCHECK --interval=5s \
 
 # tell docker what port to expose
 EXPOSE 8000
+CMD yum install java
+CMD java --version
