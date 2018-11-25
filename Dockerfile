@@ -13,7 +13,7 @@ RUN echo "master: localhost" >> /etc/salt/minion
 RUN salt-master -d ; salt-minion -d ; salt-key -A
 RUN salt '*' ping.test
 COPY . /etc/salt/srv
-RUN salt -t1000 '*' state.apply webserver
+RUN salt '*' state.apply webserver
 
 # set a health check
 HEALTHCHECK --interval=5s \
