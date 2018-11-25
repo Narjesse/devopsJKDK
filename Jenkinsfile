@@ -45,7 +45,7 @@ node {
             app.push("latest")
         }
     } */
-}
+
     stage('test Maven code') { 
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
@@ -56,5 +56,5 @@ node {
     }
     sh('. RepoOne/build.sh')
         }
-    } 
+     
 }
