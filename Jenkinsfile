@@ -51,7 +51,7 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-           dir('RepoMaven') {
+           dir('RepoOne') {
         git url: 'https://github.com/Narjesse/simple-java-maven-app'
     }
     sh('. RepoOne/build.sh')
