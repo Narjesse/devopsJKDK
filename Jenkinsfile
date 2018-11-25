@@ -19,14 +19,16 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-            sh 'echo "Tests passed"'
-            sh 'hostname'
-            sh 'ls -l; pwd'
-            sh 'echo "another line" >> test.txt'
-            sh 'ls -l; pwd'
-            sh 'cat test.txt'
-            sh 'sudo echo "master: localhost" >> /etc/salt/minion'
-            sh 'salt-master -d ; salt-minion -d; salt-key -A'
+           # sh 'echo "Tests passed"'
+           # sh 'hostname'
+           # sh 'ls -l; pwd'
+           # sh 'echo "another line" >> test.txt'
+           # sh 'ls -l; pwd'
+           # sh 'cat test.txt'
+            sh 'mkdir /root/salt; mkdir /root/salt/etc; mkdir /root/salt/var; mkdir /root/salt/srv '
+            sh 'echo "master: localhost" >> /root/salt/etc/minion'
+            sh 'echo "localhost-minion" >> /root/salt/etc/minion_id'
+            sh 'salt-master -d ; salt-minion -d -c /root/salt; salt-key -A'
             sh 'salt '*' ping.test'
         }
     }
