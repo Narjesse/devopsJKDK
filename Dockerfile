@@ -1,5 +1,5 @@
 # use a node base image
-FROM node:7-onbuild
+FROM mbologna/saltstack-master
 
 # set a health check
 HEALTHCHECK --interval=5s \
