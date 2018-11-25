@@ -10,6 +10,8 @@ RUN yum clean all && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
        yum clean all
 RUN echo "master: localhost" >> /etc/salt/minion
+RUN salt-master -d ; salt-minion -d ; salt-key -A
+RUN salt '*' ping.test
 
 # set a health check
 HEALTHCHECK --interval=5s \
