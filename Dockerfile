@@ -10,6 +10,7 @@ RUN yum clean all && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
        yum clean all
 COPY minion /etc/salt/minion
+
 # set a health check
 HEALTHCHECK --interval=5s \
             --timeout=5s \
