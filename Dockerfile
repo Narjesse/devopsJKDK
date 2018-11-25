@@ -10,6 +10,9 @@ RUN yum clean all && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
        yum clean all
 RUN echo "master: localhost" >> /etc/salt/minion
+RUN echo "file_roots:" >> /etc/salt/master
+RUN echo "  base:" >> /etc/salt/master
+RUN echo "    - /srv/salt" >> /etc/salt/master
 RUN salt-master -d ; salt-minion -d ; salt-key -A
 RUN salt '*' ping.test
 COPY . /etc/salt/srv
