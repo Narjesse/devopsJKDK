@@ -21,6 +21,10 @@ node {
         app.inside {
             sh 'echo "Tests passed"'
             sh 'hostname'
+            sh 'yum install salt'
+            sh 'ls -l; pwd'
+            sh 'echo "another line" >> test.txt'
+            sh 'ls -l; pwd'
         }
     }
 
