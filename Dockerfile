@@ -11,12 +11,12 @@ RUN yum clean all && \
        yum clean all
 RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
-RUN echo "file_roots:" >> /etc/salt/master
-RUN echo "  base:" >> /etc/salt/master
-RUN echo "    - /srv/salt" >> /etc/salt/master
+#RUN echo "file_roots:" >> /etc/salt/master
+#RUN echo "  base:" >> /etc/salt/master
+#RUN echo "    - /srv/salt" >> /etc/salt/master
 RUN salt-master -d ; salt-minion -d ; salt-key -A
-RUN salt '*' ping.test
-RUN salt '*' state.apply webserver
+RUN salt -t60 '*' ping.test
+RUN salt -t60 '*' state.apply webserver
 
 # set a health check
 HEALTHCHECK --interval=5s \
