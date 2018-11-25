@@ -1,5 +1,14 @@
 # use a node base image
-FROM mbologna/saltstack-master
+FROM centos:7
+MAINTAINER SaltStack, Inc.
+
+
+RUN yum clean all && \
+      yum install -y yum install epel-release && \
+      yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-1.el7.noarch.rpm && \
+      yum update -y && \
+      yum install -y sudo git tmux vim salt-master salt-minion && \
+      yum clean all
 
 # set a health check
 HEALTHCHECK --interval=5s \
@@ -8,5 +17,5 @@ HEALTHCHECK --interval=5s \
 
 # tell docker what port to expose
 EXPOSE 8000
-CMD yum install java
-CMD java --version
+#CMD yum install java
+#CMD java --version
