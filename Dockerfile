@@ -8,13 +8,16 @@ RUN yum clean all && \
        yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
        yum update -y && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
+       yum install git && \
        yum clean all
 RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
 #RUN echo "file_roots:" >> /etc/salt/master
 #RUN echo "  base:" >> /etc/salt/master
 #RUN echo "    - /srv/salt" >> /etc/salt/master
-RUN salt-master -d ; salt-minion -d ; salt-key -A
+RUN salt-master -d
+RUN salt-minion -d
+RUN salt-key -A
 RUN salt -t60 '*' ping.test
 RUN salt -t60 '*' state.apply webserver
 
