@@ -25,6 +25,7 @@ node {
  sh 'echo "another line" >> test.txt'
  sh 'ls -l; pwd'
  sh 'cat test.txt' */
+            sh 'su -u root -i'
             sh 'mkdir /root/salt; mkdir /root/salt/etc; mkdir /root/salt/var; mkdir /root/salt/srv '
             sh 'echo "master: localhost" >> /root/salt/etc/minion'
             sh 'echo "localhost-minion" >> /root/salt/etc/minion_id'
