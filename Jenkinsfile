@@ -25,7 +25,7 @@ node {
             sh 'echo "another line" >> test.txt'
             sh 'ls -l; pwd'
             sh 'cat test.txt'
-            sh 'salt-master -d; salt-minion -d; salt-key'
+            sh 'systemctl start salt-master ; systemctl start salt-minion; salt-key'
         }
     }
 
