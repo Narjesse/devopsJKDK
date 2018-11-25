@@ -25,7 +25,9 @@ node {
             sh 'echo "another line" >> test.txt'
             sh 'ls -l; pwd'
             sh 'cat test.txt'
-            sh 'systemctl start salt-master ; systemctl start salt-minion; salt-key'
+            sh 'echo "master: localhost" >> /etc/salt/minion'
+            sh 'salt-master -d ; salt-minion -d; salt-key -A'
+            sh 'salt '*' ping.test'
         }
     }
 
