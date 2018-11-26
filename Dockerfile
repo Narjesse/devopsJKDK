@@ -8,8 +8,8 @@ RUN yum clean all && \
        yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
        yum update -y && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
-       yum install -y git && \
        yum install -y wget && \
+       rm -rf /var/cache/yum && \
        yum clean all
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo && \
     sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo && \
