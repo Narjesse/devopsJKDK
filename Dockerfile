@@ -11,6 +11,11 @@ RUN yum clean all && \
        yum install -y git && \
        yum install -y maven && \
        yum clean all
+RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo && \
+    sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo && \
+    yum install -y apache-maven
+
+
 RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
 #RUN echo "file_roots:" >> /etc/salt/master
