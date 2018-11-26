@@ -58,6 +58,7 @@ node {
     
         }
   stage('Test Maven Project') {
+                sh 'cd RepoOne'
                 sh 'mvn test'
          /*   post {
                 always {
