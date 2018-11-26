@@ -46,7 +46,7 @@ node {
         }
     } */
 
-    stage('test Maven code') { 
+    stage('Build Maven code') { 
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
@@ -56,6 +56,16 @@ node {
         sh('mvn -B -DskipTests clean package')
     }
     
+        }
+  stage('Test Maven Project') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
         }
      
 }
