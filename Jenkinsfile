@@ -53,8 +53,9 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
            dir('RepoOne') {
         git url: 'https://github.com/Narjesse/simple-java-maven-app'
+        sh('. RepoOne/build.sh')
     }
-    sh('. RepoOne/build.sh')
+    
         }
      
 }
