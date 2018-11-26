@@ -58,8 +58,9 @@ node {
     
         }
   stage('Test Maven Project') {
-                sh 'cd RepoOne'
+               dir('RepoOne') {
                 sh 'mvn test'
+                    }
          /*   post {
                 always {
                     junit 'target/surefire-reports/*.xml'
