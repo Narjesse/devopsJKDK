@@ -58,11 +58,13 @@ node {
     
         }
   stage('Test Maven Project') {
+               app.inside {
                dir('RepoOne') {
                 sh 'id'
                 sh 'mvn test'
                 sh './jenkins/scripts/deliver.sh'
                     }
+}
          /*   post {
                 always {
                     junit 'target/surefire-reports/*.xml'
