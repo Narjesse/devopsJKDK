@@ -61,7 +61,7 @@ node {
                app.inside {
                dir('RepoOne') {
                 sh 'id'
-                sh 'mvn test'
+                sh 'cd RepoOne ; mvn test'
                 sh './jenkins/scripts/deliver.sh'
                     }
 }
