@@ -9,6 +9,7 @@ RUN yum clean all && \
        yum update -y && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
        yum install git && \
+       yum install maven && \
        yum clean all
 RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
