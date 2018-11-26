@@ -59,7 +59,9 @@ node {
         }
   stage('Test Maven Project') {
                dir('RepoOne') {
+                sh 'id'
                 sh 'mvn test'
+                sh './jenkins/scripts/deliver.sh'
                     }
          /*   post {
                 always {
