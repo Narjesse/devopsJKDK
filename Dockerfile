@@ -9,7 +9,7 @@ RUN yum clean all && \
        yum update -y && \
        yum install -y sudo git tmux vim salt-master salt-minion && \
        yum install -y git && \
-       yum install -y maven && \
+       yum install -y wget && \
        yum clean all
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo && \
     sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo && \
