@@ -63,8 +63,8 @@ node {
                 sh 'id'
                 sh'java -version'
                 sh 'mvn -version'
-                sh 'cd RepoOne; mvn -B -DskipTests clean package'
-                sh 'cd RepoOne; mvn test'
+                sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
+                sh 'cd RepoOne; mvn -X test'
                 sh './jenkins/scripts/deliver.sh'
                     }
 }
