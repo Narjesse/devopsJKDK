@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        image_id = sh (script: "docker images -q etintodevops/hellonode", returnStdout: true).trim()
+        image_id = sh (script: "docker images -q getintodevops/hellonode", returnStdout: true).trim()
         if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
         else app= docker.image(image_id)
     }
