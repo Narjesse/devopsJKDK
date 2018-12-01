@@ -28,3 +28,4 @@ if [ $? -ne 0 ]; then
 fi
 export JAVA_HOME="/usr/lib/jvm" 
 echo "++++++++++++++++++++ JAVA_HOME is $JAVA_HOME"
+mvn --version
