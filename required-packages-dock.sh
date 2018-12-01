@@ -1,4 +1,5 @@
 for package in epel-release git tmux vim salt-master salt-minion wget java-1.8.0-openjdk-devel.x86_64; do 
+  yum list installed $package
   if $? -eq 1; then
     yum install -y $package
   fi
