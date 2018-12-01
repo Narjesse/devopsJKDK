@@ -60,7 +60,8 @@ node {
   stage('Test Maven Project') {
                app.inside {
                dir('RepoOne') {
-                sh 'id'
+                sh'echo "this is id"'
+                sh 'id; whoami'
                 sh'java -version'
                 sh 'mvn -version'
                 sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
