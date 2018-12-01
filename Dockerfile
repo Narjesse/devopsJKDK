@@ -4,9 +4,6 @@ MAINTAINER SaltStack, Inc.
 COPY . .
 RUN  ls -l
 RUN  cat required-packages-dock.sh
-RUN  export JAVA_HOME="/usr/lib/jvm" && \
-
-
 RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
 #RUN echo "file_roots:" >> /etc/salt/master

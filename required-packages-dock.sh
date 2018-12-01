@@ -11,3 +11,4 @@ if $? -ne 0; then
     sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
     yum install -y apache-maven
 fi
+export JAVA_HOME="/usr/lib/jvm" 
