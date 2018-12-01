@@ -61,7 +61,7 @@ node {
                app.inside {
                dir('RepoOne') {
                 sh'echo "this is id"'
-                sh 'id; whoami'
+                sh 'id'
                 sh'java -version'
                 sh 'mvn -version'
                 sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
