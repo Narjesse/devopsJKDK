@@ -20,8 +20,8 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-         chmod +x required-packages-dock.sh
-        ./required-packages-dock.sh
+         sh ('chmod +x required-packages-dock.sh')
+         ('./required-packages-dock.sh')
         }
     }
 
