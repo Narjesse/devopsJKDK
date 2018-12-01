@@ -12,7 +12,7 @@ node {
          * docker build on the command line */
         image_id = sh (script: "docker images -q etintodevops/hellonode", returnStdout: true).trim()
         if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
-        else app= 
+        else app= docker.image(image_id)
     }
 
     stage('Test image') {
