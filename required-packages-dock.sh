@@ -27,3 +27,4 @@ if [ $? -ne 0 ]; then
     yum install -y apache-maven
 fi
 export JAVA_HOME="/usr/lib/jvm" 
+echo "++++++++++++++++++++ JAVA_HOME is $JAVA_HOME"
