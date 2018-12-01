@@ -2,9 +2,9 @@
 FROM centos:7
 MAINTAINER SaltStack, Inc.
 COPY . .
-RUN  ls -l
-RUN  cat required-packages-dock.sh
-RUN echo "master: localhost" > /etc/salt/minion
+#RUN  ls -l
+#RUN  cat required-packages-dock.sh
+#RUN echo "master: localhost" > /etc/salt/minion
 COPY . /etc/salt/srv
 #RUN echo "file_roots:" >> /etc/salt/master
 #RUN echo "  base:" >> /etc/salt/master
