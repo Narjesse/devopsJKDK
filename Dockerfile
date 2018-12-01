@@ -2,7 +2,7 @@
 FROM centos:7
 MAINTAINER SaltStack, Inc.
 
-RUN  ./required-packages-dock.sh
+RUN  cat required-packages-dock.sh
 RUN  export JAVA_HOME="/usr/lib/jvm" && \
 
 
