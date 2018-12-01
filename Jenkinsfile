@@ -10,9 +10,9 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        image_id = sh (script: "docker images -q whatever/whatever:99", returnStdout: true).trim()
-        if (image_id.isEmpty()) throw new Exception("Image not found")
-        else app = docker.build("getintodevops/hellonode")
+        image_id = sh (script: "docker images -q etintodevops/hellonode", returnStdout: true).trim()
+        if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
+        else app= 
     }
 
     stage('Test image') {
