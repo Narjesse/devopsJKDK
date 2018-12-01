@@ -21,7 +21,7 @@ node {
 
         app.inside {
          sh ('chmod +x required-packages-dock.sh')
-         ('./required-packages-dock.sh')
+         sh ('./required-packages-dock.sh')
         }
     }
 
