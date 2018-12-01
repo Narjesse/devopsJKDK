@@ -1,7 +1,7 @@
 # use a node base image
 FROM centos:7
 MAINTAINER SaltStack, Inc.
-RUN  ll
+RUN  ls -l
 RUN  cat required-packages-dock.sh
 RUN  export JAVA_HOME="/usr/lib/jvm" && \
 
