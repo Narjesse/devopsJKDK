@@ -2,21 +2,8 @@
 FROM centos:7
 MAINTAINER SaltStack, Inc.
 
-
-RUN yum clean all && \
-       yum install -y epel-release && \
-       yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
-       yum update -y && \
-       yum install -y sudo git tmux vim salt-master salt-minion && \
-       yum install -y wget && \
-       rm -rf /var/cache/yum && \
-       yum install java-1.8.0-openjdk-devel.x86_64 && \
-       export JAVA_HOME="/usr/lib/jvm" && \
-       yum clean all
-RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo && \
-    sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo && \
-    yum install -y apache-maven && \
-    chmod 777 /var
+RUN  ./required-packages-dock.sh
+RUN  export JAVA_HOME="/usr/lib/jvm" && \
 
 
 RUN echo "master: localhost" > /etc/salt/minion
