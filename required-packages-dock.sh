@@ -8,7 +8,7 @@ for package in git tmux vim salt-master salt-minion wget; do
     yum install -y $package
   fi
 done
-for package in epel-release java-1.8.0-openjdk-devel; do 
+for package in epel-release java-1.8.0-openjdk-devel maven; do 
 #for package in git; do
   echo "--------------------------------"
   echo "NOW WITH THE PACKAGE $package"
