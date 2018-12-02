@@ -57,8 +57,8 @@ node {
                 sh'java -version'
                 sh 'mvn -version'
                 sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
-                sh 'cd RepoOne; mvn -X test'
-                sh './jenkins/scripts/deliver.sh'
+             /*   sh 'cd RepoOne; mvn -X test'
+                sh './jenkins/scripts/deliver.sh' */
                     }
 }
          /*   post {
