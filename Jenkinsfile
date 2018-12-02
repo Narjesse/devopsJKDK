@@ -52,10 +52,12 @@ node {
   stage('Test Maven Project') {
                app.inside {
                dir('RepoOne') {
-                sh'echo "this is id"'
+                sh 'echo "this is id"'
                 sh 'id'
                 sh'java -version'
                 sh 'mvn -version'
+                sh 'echo "+++++++++++++++++-------------+++++++++++"'
+                sh 'pwd ; hostname ; ls -l'
                 sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
              /*   sh 'cd RepoOne; mvn -X test'
                 sh './jenkins/scripts/deliver.sh' */
