@@ -57,7 +57,7 @@ node {
                 sh'java -version'
                 sh 'mvn -version'
                 sh 'echo "+++++++++++++++++-------------+++++++++++"'
-                sh 'pwd ; hostname ; ls -l; mkdir /root/YESHERE'
+                sh 'pwd ; hostname ; ls -l; mkdir /root/YESHERE; echo $JAVA_HOME'
                 sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
              /*   sh 'cd RepoOne; mvn -X test'
                 sh './jenkins/scripts/deliver.sh' */
