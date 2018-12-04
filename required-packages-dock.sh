@@ -26,6 +26,6 @@ if [ $? -ne 0 ]; then
     sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
     yum install -y apache-maven
 fi
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64/jre" 
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64" 
 echo "++++++++++++++++++++ JAVA_HOME is $JAVA_HOME"
 mvn --version
