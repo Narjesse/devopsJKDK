@@ -1,4 +1,4 @@
-for package in git tmux vim salt-master salt-minion wget; do 
+for package in git tmux vim salt-master salt-minion wget tree; do 
 #for package in git; do
   echo "--------------------------------"
   echo "NOW WITH THE COMMAND $package"
