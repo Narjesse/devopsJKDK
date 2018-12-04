@@ -30,3 +30,4 @@ export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64"
 echo "++++++++++++++++++++ JAVA_HOME is $JAVA_HOME"
 ls -l /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64
 mvn --version
+echo "DONE"
