@@ -24,13 +24,13 @@ node {
          sh ('echo "***********LETS CHECK IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE********"')
          sh ('./required-packages-dock.sh')
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
-         sh 'echo "this is id"'
+        /* sh 'echo "this is id"'
          sh 'id'
          sh'java -version'
          sh 'yum install java-1.8.0-openjdk-devel'
          sh 'echo "+++++++++++++++++-------------+++++++++++"'
          sh 'pwd ; hostname ; ls -l; mkdir /root/YESHERE; export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64; echo "java home is $JAVA_HOME"'
-         sh 'ls -l /usr/lib/jvm' 
+         sh 'ls -l /usr/lib/jvm' */
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
         }
