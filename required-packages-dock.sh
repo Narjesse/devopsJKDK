@@ -11,10 +11,10 @@ done
 echo "--------------------------------"
 echo "NOW WITH THE JAVA ALONE"
 echo "--------------------------------"
-java -version
-if [ $? -ne 0 ]; then
+#java -version
+#if [ $? -ne 0 ]; then
 yum install -y java-1.8.0-openjdk-devel
-fi
+#fi
 for package in epel-release ; do 
 #for package in git; do
   echo "--------------------------------"
