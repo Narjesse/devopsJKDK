@@ -33,7 +33,7 @@ node {
          sh 'ls -l /usr/lib/jvm' 
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
-         sh './jenkins/scripts/deliver.sh'
+      #   sh './jenkins/scripts/deliver.sh'
         }
     }
 
