@@ -14,7 +14,7 @@ echo "--------------------------------"
 java -version
 if [ $? -ne 0 ]; then
 yum install -y java-1.8.0-openjdk-devel
-
+fi
 for package in epel-release ; do 
 #for package in git; do
   echo "--------------------------------"
@@ -25,7 +25,7 @@ for package in epel-release ; do
     yum install -y $package
   fi
 done
-yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm
+#yum install -y https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm
 
 mvn --version
 if [ $? -ne 0 ]; then
