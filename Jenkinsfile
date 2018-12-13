@@ -26,6 +26,8 @@ node {
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
          }
         sh ('docker ps')
+        sh ('docker -aqf')
+       
          
         /* sh 'echo "this is id"'
          sh 'id'
