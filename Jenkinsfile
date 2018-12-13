@@ -20,10 +20,13 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-         sh ('chmod +x required-packages-dock.sh')
+         /*sh ('chmod +x required-packages-dock.sh')
          sh ('echo "***********LETS CHECK IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE********"')
-         sh ('./required-packages-dock.sh')
+         sh ('./required-packages-dock.sh')*/
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
+         }
+        app.commit("getintodevops/hellonode")
+         
         /* sh 'echo "this is id"'
          sh 'id'
          sh'java -version'
@@ -33,7 +36,6 @@ node {
          sh 'ls -l /usr/lib/jvm' */
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
-        }
     }
 
  /*    stage('Push image') { */
