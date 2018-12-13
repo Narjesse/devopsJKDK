@@ -26,7 +26,7 @@ node {
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
          }
         sh ('docker ps')
-        sh ('docker -aqf')
+        sh ('id=`docker ps -aqf "name=fervent_lumiere"` ; docker commit $id getintodevops/hellonode')
        
          
         /* sh 'echo "this is id"'
