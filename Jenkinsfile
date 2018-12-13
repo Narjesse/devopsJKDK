@@ -25,7 +25,7 @@ node {
          sh ('./required-packages-dock.sh')*/
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
          }
-        docker ps
+        sh ('docker ps')
          
         /* sh 'echo "this is id"'
          sh 'id'
