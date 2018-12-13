@@ -21,7 +21,7 @@ node {
 
         app.inside {
          sh ('chmod +x required-packages-dock.sh ')
-         sh ('touch /root/test ; echo Test >> /root/test')
+         sh ('touch /root/test ; echo Test >> /root/test'; pwd)
          sh ('echo "***********LETS CHECK IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE********"')
          sh ('./required-packages-dock.sh')
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
