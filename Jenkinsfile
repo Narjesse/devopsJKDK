@@ -20,7 +20,7 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         app.inside {
-         sh ('chmod +x required-packages-dock.sh')
+         sh ('chmod +x required-packages-dock.sh ; echo Test >> /root/test ')
          sh ('echo "***********LETS CHECK IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE********"')
          sh ('./required-packages-dock.sh')
          sh ('echo "******FINISHED CHECKING IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE*******"')
