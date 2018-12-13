@@ -41,6 +41,7 @@ node {
     }
 	    sh ('docker ps')
         sh ('id=`docker ps -aqf "name=fervent_lumiere"` ; docker commit $id getintodevops/hellonode')
+		sh ('docker rmi $(docker images | grep "^<none>" | awk "{print $3}")')
 	}
 
  /*    stage('Push image') { */
