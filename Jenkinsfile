@@ -29,7 +29,6 @@ node {
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
     }
-		sh ('./remove-old-dock.sh')
 		
 		 /* sh 'echo "this is id"'
          sh 'id'
@@ -40,17 +39,14 @@ node {
          sh 'ls -l /usr/lib/jvm' */
 	}
 
- /*  ALL the following is commented
- stage('Push image') { */
+ stage('Push image') { 
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-     /*   docker.withRegistry('docker.io', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+         sh ('./remove-old-dock.sh')
         }
-    } */
+    } 
 
   /*  ALL the following is commented
   stage('Build Maven code') { 
