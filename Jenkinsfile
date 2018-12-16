@@ -30,7 +30,7 @@ node {
     }
 	    sh ('docker ps')
         sh ('id=`docker ps -aqf "name=fervent_lumiere"` ; docker commit $id getintodevops/hellonode')
-		sh ('docker rmi $(docker images | grep "^<none>" | | cut -d" " -f3)')
+		sh ('./remove-old-dock.sh')
 		
 		 /* sh 'echo "this is id"'
          sh 'id'
