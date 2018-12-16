@@ -46,7 +46,6 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. */
          sh ('./remove-old-dock.sh')
         }
-    } 
 
   /*  ALL the following is commented
   stage('Build Maven code') { 
