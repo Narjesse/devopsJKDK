@@ -21,6 +21,7 @@ node {
 
         app.inside {
          sh ('chmod +x required-packages-dock.sh ')
+         sh ('chmod +x remove-old-dock.sh ')
          sh ('touch /root/test ; echo Test >> /root/test; pwd')
          sh ('echo "***********LETS CHECK IF WE HAVE ALL PACKAGES WITHIN THE DOCKER IMAGE********"')
          sh ('./required-packages-dock.sh')
@@ -28,8 +29,6 @@ node {
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
     }
-	    sh ('docker ps')
-        sh ('id=`docker ps -aqf "name=fervent_lumiere"` ; docker commit $id getintodevops/hellonode')
 		sh ('./remove-old-dock.sh')
 		
 		 /* sh 'echo "this is id"'
