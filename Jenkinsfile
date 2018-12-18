@@ -21,9 +21,9 @@ node {
          sh ' echo "file_roots:" > /etc/salt/master'
          sh ' echo "  base:" >> /etc/salt/master'
          sh 'echo "    - /srv/salt" >> /etc/salt/master'
-
 		 }
-		 
+		 sh ('chmod +x remove-old-dock.sh ')
+		 sh ('./remove-old-dock.sh')
 		 }
 /*		 
     stage('Test image') {
@@ -49,14 +49,14 @@ node {
          sh 'pwd ; hostname ; ls -l; mkdir /root/YESHERE; export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64; echo "java home is $JAVA_HOME"'
          sh 'ls -l /usr/lib/jvm' 
 	}*/
-
+/*
  stage('Push image') { 
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
          sh ('./remove-old-dock.sh')
-        }
+        }*/
 
   /*  ALL the following is commented
   stage('Build Maven code') { 
