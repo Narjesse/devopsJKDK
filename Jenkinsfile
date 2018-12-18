@@ -35,3 +35,4 @@ node {
 		 sh ('chmod +x remove-old-dock.sh ')
 		 sh ('./remove-old-dock.sh')
 }
+}
