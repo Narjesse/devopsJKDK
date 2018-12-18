@@ -18,17 +18,17 @@ node {
      stage('Salt deploy') {
 	             app.inside {
          sh ' echo "master: localhost" > /etc/salt/minion'
-         sh ' echo "file_roots:" >> /etc/salt/master'
+         sh ' echo "file_roots:" > /etc/salt/master'
          sh ' echo "  base:" >> /etc/salt/master'
          sh 'echo "    - /srv/salt" >> /etc/salt/master'
 
 		 }
 		 
 		 }
-		 
+/*		 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
+         * For this example, we're using a Volkswagen-type approach ;-) 
 
         app.inside {
          sh ('chmod +x required-packages-dock.sh ')
@@ -40,7 +40,7 @@ node {
          sh 'cd RepoOne; mvn -B -X -DskipTests clean package'
          sh 'cd RepoOne; mvn -X test'
     }
-		
+		*/
 		 /* sh 'echo "this is id"'
          sh 'id'
          sh'java -version'
