@@ -47,8 +47,8 @@ node {
          sh 'yum install java-1.8.0-openjdk-devel'
          sh 'echo "+++++++++++++++++-------------+++++++++++"'
          sh 'pwd ; hostname ; ls -l; mkdir /root/YESHERE; export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64; echo "java home is $JAVA_HOME"'
-         sh 'ls -l /usr/lib/jvm' */
-	}
+         sh 'ls -l /usr/lib/jvm' 
+	}*/
 
  stage('Push image') { 
         /* Finally, we'll push the image with two tags:
