@@ -7,6 +7,7 @@ node {
         checkout scm
     }
 
+
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
@@ -14,7 +15,17 @@ node {
         if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
         else app= docker.image(image_id)
     }
+     stage('Salt deploy') {
+	             app.inside {
+         sh ' echo "master: localhost" > /etc/salt/minion'
+         sh ' echo "file_roots:" >> /etc/salt/master'
+         sh ' echo "  base:" >> /etc/salt/master'
+         sh 'echo "    - /srv/salt" >> /etc/salt/master'
 
+		 }
+		 
+		 }
+		 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
