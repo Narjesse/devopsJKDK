@@ -23,9 +23,15 @@ node {
          sh 'echo "    - /srv/salt" >> /etc/salt/master'
 		 sh 'touch /root/test123'
 		 }
-		 sh ('chmod +x remove-old-dock.sh ')
-		 sh ('./remove-old-dock.sh')
+		 sh ('chmod +x save-docker.sh ')
+		 sh ('./save-docker.sh')
 		 }
 
-     
+      stage('Salt deploy end') {
+	             app.inside {
+         sh ' echo "finished"'
+         
+		 }
+		 sh ('chmod +x remove-old-dock.sh ')
+		 sh ('./remove-old-dock.sh')
 }
