@@ -21,6 +21,7 @@ node {
          sh ' echo "file_roots:" > /etc/salt/master'
          sh ' echo "  base:" >> /etc/salt/master'
          sh 'echo "    - /srv/salt" >> /etc/salt/master'
+		 sh 'useradd appserv'
 		 sh 'touch /root/test123'
 		 }
 		 sh ('chmod +x save-docker.sh ')
