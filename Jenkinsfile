@@ -29,10 +29,7 @@ node {
 		 }
 
       stage('Salt deploy end') {
-	             app.inside {
-         sh ' echo "finished"'
-         
-		 }
+	     app.push
 		 sh ('chmod +x remove-old-dock.sh ')
 		 sh ('./remove-old-dock.sh')
 }
