@@ -20,7 +20,7 @@ node {
     }
 	
 	 stage('Use Ansible in docker') {
-	   app.inside (sh ('ansible localhost -m shell -a 'echo "hello"' '))
+	   app.inside (sh ('ansible localhost -m shell -a "echo "hello"" '))
 	   
 	   }
      
