@@ -14,7 +14,7 @@ node {
         image_id = sh (script: "docker images -q getintodevops/built-from-jenkins", returnStdout: true).trim()
         if (image_id.isEmpty()) app = docker.build("getintodevops/built-from-jenkins")
         else app= docker.image(image_id)
-		app = docker.build("getintodevops/built-from-jenkins")
+		
 
     }
      stage('Sve Image') {
