@@ -8,6 +8,5 @@ RUN echo "master: localhost" > /etc/salt/minion
 RUN echo "file_roots:" > /etc/salt/master
 RUN echo "  base:" >> /etc/salt/master
 RUN echo "    - /srv/salt" >> /etc/salt/master
-RUN useradd appserv
 RUN touch /root/test123
 EXPOSE 8000
