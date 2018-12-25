@@ -24,6 +24,7 @@ node {
 		 sh 'useradd appserv'
 		 sh 'touch /root/test123'
 		 }
+		 app.commit("newImage")
 		 sh ('chmod +x save-docker.sh ')
 		 sh ('./save-docker.sh')
 		 }
