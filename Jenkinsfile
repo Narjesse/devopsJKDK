@@ -29,8 +29,6 @@ node {
 		 }
 
       stage('Salt deploy end') {
-	     app.push("${env.BUILD_NUMBER}")
-         app.push("latest")
 		 sh ('chmod +x remove-old-dock.sh ')
 		 sh ('./remove-old-dock.sh')
 }
