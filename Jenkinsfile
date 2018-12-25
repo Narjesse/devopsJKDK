@@ -24,7 +24,8 @@ node {
 		 }
 
       stage('remove extra images') {
-		 sh ('chmod +x remove-old-dock.sh ')
-		 sh ('./remove-old-dock.sh')
+		 sh ('chmod +x remove-none-dock.sh ')
+		 sh ('./remove-none-dock.sh')
+		 sh ('python remove-extra-notnone-dock.py')
 }
 }
