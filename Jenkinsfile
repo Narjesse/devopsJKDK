@@ -24,7 +24,7 @@ node {
 		 }
 
       stage('remove extra images') {
-		/* sh ('chmod +x remove-old-dock.sh ')
-		 sh ('./remove-old-dock.sh')*/
+		 sh ('chmod +x remove-old-dock.sh ')
+		 sh ('./remove-old-dock.sh')
 }
 }
