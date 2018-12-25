@@ -28,8 +28,8 @@ node {
 		 sh ('./save-docker.sh')
 		 }
 
-      stage('Salt deploy end') {
-		 sh ('chmod +x remove-old-dock.sh ')
-		 sh ('./remove-old-dock.sh')
+      stage('remove extra images') {
+		/* sh ('chmod +x remove-old-dock.sh ')
+		 sh ('./remove-old-dock.sh')*/
 }
 }
