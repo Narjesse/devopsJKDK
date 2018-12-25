@@ -14,7 +14,6 @@ for line in client.images.list():
      if "narjess6/built-from-jenkins:latest" not in imagename:
         try:
            client.images.remove(imagename)
-           print("removed")
-           break
+           print("removed image ===> ", imagename)
         except ValueError:
-           print "Oops! You cannot remove this docker image"
+           print ("Oops! You cannot remove this docker image===> ", imagename)
