@@ -14,13 +14,13 @@ node {
         /*image_id = sh (script: "docker images -q getintodevops/hellonode", returnStdout: true).trim()
         if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
         else app= docker.image(image_id)*/
-		app = docker.build("getintodevops/hellonode")
+		app = docker.build("getintodevops/built-from-jenkins")
 
     }
      stage('Sve Image') {
 
-		 sh ('chmod +x save-docker.sh ')
-		 sh ('./save-docker.sh')
+		/* sh ('chmod +x save-docker.sh ')
+		 sh ('./save-docker.sh')*/
 		 }
 
       stage('remove extra images') {
