@@ -14,6 +14,8 @@ node {
         image_id = sh (script: "docker images -q getintodevops/hellonode", returnStdout: true).trim()
         if (image_id.isEmpty()) app = docker.build("getintodevops/hellonode")
         else app= docker.image(image_id)
+		sh ('chmod +x save-docker.sh ')
+		 sh ('./save-docker.sh')
     }
      stage('Salt deploy') {
 	             app.inside {
@@ -24,7 +26,7 @@ node {
 		 sh 'useradd appserv'
 		 sh 'touch /root/test123'
 		 }
-		 app.commit("newImage")
+		 
 		 sh ('chmod +x save-docker.sh ')
 		 sh ('./save-docker.sh')
 		 }
