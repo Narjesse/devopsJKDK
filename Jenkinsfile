@@ -11,9 +11,10 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        image_id = sh (script: "docker images -q getintodevops/built-from-jenkins", returnStdout: true).trim()
-        if (image_id.isEmpty()) app = docker.build("getintodevops/built-from-jenkins")
+        /*image_id = sh (script: "docker images -q narjess6/built-from-jenkins", returnStdout: true).trim()
+        if (image_id.isEmpty()) app = docker.build("narjess6/built-from-jenkins")*/
         else app= docker.image(image_id)
+		app = docker.build("narjess6/built-from-jenkins")
 		
 
     }
