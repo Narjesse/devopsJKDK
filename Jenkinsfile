@@ -13,7 +13,7 @@ node {
 
 	    
 		/*app = docker.build("narjess6/built-from-jenkins")*/
-		docker.image("narjess6/built-from-jenkins").run("myrun")
+		docker.image("narjess6/built-from-jenkins").run("--name myname")
 		sh ('docker run -i --name=devops-image docker.io/narjess6/built-from-jenkins:latest /bin/bash')
 
     }
