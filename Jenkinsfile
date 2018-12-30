@@ -28,7 +28,9 @@ node {
 	 
 	 stage('Sve Image') {
 
-		app.push("latest")
+	 sh ('chmod +x save-docker.sh ')
+	 sh (' ./save_docker.sh')
+		/*app.push("latest")*/
 		 }
 
       stage('remove extra images') {
