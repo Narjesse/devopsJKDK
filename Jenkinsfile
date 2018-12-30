@@ -29,7 +29,7 @@ node {
 	 stage('Sve Image') {
 
 	 sh ('chmod +x save-docker.sh ')
-	 sh (' ./save_docker.sh')
+	 sh (' ./save-docker.sh')
 		/*app.push("latest")*/
 		 }
 
