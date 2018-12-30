@@ -5,7 +5,7 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
-		       sh ('docker rm devops-image')
+		       sh ('docker rm -f devops-image')
     }
 
 
