@@ -27,7 +27,7 @@ node {
      
 	 
 	 stage('Sve Image') {
-
+/* fait partie des ficihers copiés à partir de git repo localement dans la VM ou tourne jenkins, et pas dans le docker image*/
 	 sh ('chmod +x save-docker.sh ')
 	 sh (' ./save-docker.sh')
 		/*app.push("latest")*/
