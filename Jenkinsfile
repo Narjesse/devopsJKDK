@@ -20,9 +20,9 @@ node {
     }
 	
 	 stage('Use Ansible in docker') {
-	   app.inside {
-	   sh ('ansible localhost -m shell -a "echo "hello"" ')
-	   }
+	   sh ('cd /root/firstRoleAnsible/tasks')
+	   sh (' ansible-playbook -i inventory main.yml')
+	   
 	   
 	   }
      
