@@ -9,19 +9,15 @@ node {
 
 
     stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-        /*image_id = sh (script: "docker images -q narjess6/built-from-jenkins", returnStdout: true).trim()
-        if (image_id.isEmpty()) app = docker.build("narjess6/built-from-jenkins")
-        else app= docker.image(image_id)*/
+
 		app = docker.build("narjess6/built-from-jenkins")
 		
 
     }
 	
 	 stage('Use Ansible in docker') {
-	   sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/main.yml')
-	   
+	   sh ('docker run -it --name=devops-image docker.io/narjess6/built-from-jenkins:latest /bin/bash')
+       sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/main.yml')
 	   
 	   }
      
@@ -32,6 +28,7 @@ node {
 		 }
 
       stage('remove extra images') {
+	     sh ('docker rm devops-image')
 		 sh ('chmod +x remove-none-dock.sh ')
 		 sh ('./remove-none-dock.sh')
 		 sh ('python remove-extra-notnone-dock.py')
