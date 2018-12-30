@@ -16,6 +16,7 @@ node {
     }
 	
 	 stage('Use Ansible in docker') {
+       sh ('docker rm devops-image')
 	   sh ('docker run -i --name=devops-image docker.io/narjess6/built-from-jenkins:latest /bin/bash')
        sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/main.yml')
 	   
