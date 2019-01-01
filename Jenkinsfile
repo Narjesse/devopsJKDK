@@ -36,7 +36,7 @@ node {
       stage('remove extra images') {
 	      sh ('docker stop devops-image || echo "no such container"; docker rm -f devops-image || echo "no such container"')
 		 sh ('chmod +x remove-none-dock.sh ')
-		 sh ('./remove-none-dock.sh')
-		 sh ('python remove-extra-notnone-dock.py')
+		/* sh ('./remove-none-dock.sh')
+		 sh ('python remove-extra-notnone-dock.py')*/
 }
 }
