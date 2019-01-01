@@ -21,7 +21,8 @@ node {
 	 stage('Use Ansible in docker') {
       
 	   
-       sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/main.yml')
+       sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/install.yml')
+	   sh (' ansible-playbook -i /root/firstRoleAnsible/tasks/inventory /root/firstRoleAnsible/tasks/instance.yml')
 	   
 	   }
      
