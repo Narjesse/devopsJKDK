@@ -30,7 +30,7 @@ node {
 /* fait partie des ficihers copiés à partir de git repo localement dans la VM ou tourne jenkins, et pas dans le docker image*/
 	 sh ('chmod +x save-docker.sh ')
 	 sh (' ./save-docker.sh')
-		/*app.push("latest")*/
+		app.push("latest")
 		 }
 
       stage('remove extra images') {
